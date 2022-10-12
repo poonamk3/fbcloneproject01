@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ <link rel="stylesheet" href="{% static 'enroll/css/bootstrap.css' %}">
+</head>
+<body>
+ <div class="container mt-5">
+  <h2 class="text-center alert alert-danger">Registration Page</h2>
+  <div class="row">
+     <div class="col-sm-7">
+        
+        <form action="" method="post">
+       
+         <!-- {{form.as_p}} -->
+
+        
+        {% for i in form %}
+        {% csrf_token %}
+        {{i.label_tag}}{{i}}{{i.errors|striptags}}<br>
+        {% endfor %}
+         <input type="submit" class="btn btn-warning" value="submit">
+         <a class="btn btn-warning" href="/">Home</a>
+      </form>
+        </form>
+     </div>
+  
+
+     
+  </div>
+ </div>
+ <script src="{% static 'enroll/js/jquery.js' %}"></script>
+ <script src="{% static 'enroll/js/popper.js' %}"></script>
+ <script src="{% static 'enroll/js/bootstrap.js' %}"></script>
+</body>
+</html>

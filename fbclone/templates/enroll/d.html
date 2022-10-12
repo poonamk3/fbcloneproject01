@@ -1,0 +1,269 @@
+def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return super(CommentsView,self).form_valid(form)
+    def get_queryset(self):
+        return Comment.objects.all()
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Add To Comments
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Comments</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <div class="modal-body">
+            <form action="" method="post" enctype="multipart/form-data">
+               {% csrf_token %}
+               {{form.as_p}}
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-primary" value="submit">
+                </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+    class CommentsView(CreateView):
+    model= Comment
+    form_class = CommentFrom
+    template_name='enroll/master.html'
+    success_url = '/'
+
+
+
+def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['fromname'] = context["form"]
+        return context
+
+
+class CommentsView(BSModalCreateView):
+    template_name='enroll/postlist.html'
+    form_class = CommentFrom
+    success_url = reverse_lazy('home')
+
+
+def Comment(request):
+    if request.method== 'POST':
+        fm=CommentFrom(request.POST)
+        if fm.is_valid():
+            fm.save() 
+    else :
+        fm=CommentFrom()
+    context={
+        'fromss':fm
+    }
+    return render(request,"enroll/postlist.html",context)
+
+class CommentsView(CreateView):
+    model= Comment
+    form_class = CommentFrom
+    template_name='enroll/master.html'
+    success_url = '/'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['fromname'] = context["form"]
+        context['login_view_in_action'] = True
+        return context
+
+def Comment(request):
+        
+        if request.method == 'POST':
+            posts=Comment(request.POST)
+            if request.POST.get('posts') and request.POST.get('user') and request.POST.get('body') :   
+                posts.post= request.POST.get('posts')
+                posts.user= request.POST.get('user')
+                posts.body= request.POST.get('body')
+                posts.save()
+
+                
+            return HttpResponseRedirect('/')  
+            
+        else:
+            return HttpResponseRedirect('/')
+
+def comm(request):
+    user=request.user
+    if request.method == 'POST':
+        post_id=request.POST.get('post_id')
+        post_obj=Post.objects.get(id=post_id)
+        if request.method == 'POST':
+          fm = CommentFrom(request.POST)
+          if fm.is_valid():
+            nm = fm.cleaned_data['body']
+            reg = User(name=nm)
+            reg.save()
+            fm = CommentFrom()
+          else:
+            fm = CommentFrom()
+        return render(request, 'enroll/postlist.html', 
+def Comment(request):
+        if request.method == 'POST':
+            posts=Comments()
+            if request.POST.get('posts') and request.POST.get('user') and request.POST.get('body') :   
+                posts.post= request.POST.get('posts')
+                posts.user= request.POST.get('user')
+                posts.body= request.POST.get('body')
+                posts.save()
+
+                
+                return render(request, 'enroll/master.html')  
+            
+        else:
+                return render(request,'enroll/master.html')
+    # if request.method == "POST":
+    #     user=request.user.username
+    #     postSno =request.POST.get('postSno')
+    #     post= Post.objects.get(id=postSno)
+    #     comments=request.POST.get('comment')
+    #     cm=CommentFrom(request.POST)
+    #     if cm.is_valid():
+    #         cm=Comment(post=post,user=user,body=comments)
+    #         cm.save() 
+    # return redirect("/")
+if request.method == "POST":    
+        comment=request.POST['comment']
+        user=request.user.username
+        postSno =request.POST.get('postSno')
+        post_obj= Post.objects.get(id=postSno)
+        cm=Comment(post=post_obj,user=user,body=comment)
+        cm.save()
+        messages.success(request, "Your comment has been posted successfully")
+    return redirect("/")
+
+
+if request.method == "POST":    
+        user=request.user
+        cm=Comment(post=post_obj,user=user,body=comment)
+        cm.save()
+        cm=Comment.objects.values()
+        data = {
+            'cm':data
+            }
+    return JsonResponse(data, safe=False)
+    # return redirect("/")
+ if (data.status == "save"){
+                            console.log("Success");
+                            $('#cb').append('<p>' + response.comment.body + '</p>');                            }
+                        }
+                        if (data.status == 0){
+                            console.log("Error")
+                        }
+<div class="comment-wrapper{{ i.id }}">
+
+
+  $('.comment-from').click(function(event){
+                event.preventDefault();
+                const post_id = $(this).attr('id')
+                constname=$('#name').val();
+                console.log(post_id )
+                $.ajax({
+                    method: 'POST',
+                    url: '{% url "comment" %}', 
+                    data: {
+                        'name': $('#name').val(),
+                        'content': $('#content').val(),
+                        'csrfToken': $('input[name=csrfmiddlewaretoken]').val()
+                    },
+                    success: function (data) {
+                        console.log(data.content)
+                         // data = JSON.parse(data);            // Added this code
+                         //  $("#text").text(data.cm);      // Updated
+                          // $("#author").text(data[0].author); 
+                        // // $(`.comment-wrapper${ post_id }`).html(data.cm);
+                        
+                    }
+                })
+            })
+
+
+$('.comment-from').click(function(event){
+            event.preventDefault();
+            const post_id = $(this).attr('id')
+            const constname=$('#name').val()
+            const constbody=$('#content').val()
+            
+            $.ajax({
+                method: 'POST',
+                url:'{% url 'comment' %}', 
+                data: {
+                    'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+                    'post_id':post_id,
+                    'name':constname,
+                    'content':constbody,
+                    
+                },
+                success: function (data) {
+                    // console.log(data)
+                },
+                error : function(response){
+                    console.log('poonam',response)
+                }
+            })
+        });
+
+$('.comment-btn').click(function(event){
+                event.preventDefault();
+                const post_id = $(this).attr('id')
+                const constname=$('#name').val()
+                const constbody=$('#content').val()
+                console.log(post_id )
+                $.ajax({
+                    method: 'POST',
+                    url: '{% url 'comment' %}', 
+                    data: {
+                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+                        'post_id':post_id,
+                        'name':constname,
+                        'content':constbody,
+                    },
+                    success: function (data) {
+                        console.log(data.content)
+                    },
+                    error : function(response){
+                        console.log('poonam',response)
+                    }
+                })
+            })
+
+def add_comment(request):
+    comment=request.POST.get('comment')
+    postSno =request.POST.get('postSno')
+    post_obj= Post.objects.get(id=postSno)
+    if request.method == "POST":    
+        user=request.user
+        cm=Comment(post=post_obj,user=user,body=comment)
+        cm.save()
+        data = Comment.objects.values().order_by('-created')
+        commdata=data[len(data)-1]
+        return JsonResponse({'cm':commdata,'status':'save'},safe=False)
+    else:
+        return redirect("/")
+    return redirect("/")
+
+
+   
+if request.method == "POST": 
+        comment=request.POST.get('comment')
+        postSno =request.POST.get('postSno')
+        post_obj= Post.objects.get(id=postSno)   
+        user=request.user
+        cm=Comment(post=post_obj,user=user,body=comment)
+        cm.save()
+        data = Comment.objects.values()
+        commdata=data[len(data)-1]
+        return JsonResponse({'cm':commdata,'status':'save'},safe=False)
+    else:
+        return redirect("/")
+    return redirect("/")
+

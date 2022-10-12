@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<style>
+h5 {text-align: center;}
+
+</style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="{% static 'enroll/css/bootstrap.css' %}">
+</head>
+<body>
+ <div class="container mt-5">
+  <h2 class="text-center alert alert-danger">Logged out</h2>
+  <h5>Thanks for spending some quality time with the web site today.</h5>
+  <a href="/accounts/login/" class="btn btn-success">Login</a>
+  <a class="btn btn-warning" href="/">Home</a>
+ 
+ </div>
+ <script src="{% static 'enroll/js/jquery.js' %}"></script>
+ <script src="{% static 'enroll/js/popper.js' %}"></script>
+ <script src="{% static 'enroll/js/bootstrap.js' %}"></script>
+</body>
+</html>

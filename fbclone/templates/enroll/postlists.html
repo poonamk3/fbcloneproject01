@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="{% static 'enroll/css/bootstrap.css' %}">
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+ <link rel="stylesheet" href="{% static 'enroll/css/bootstrap.css' %}">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js'></script>
+
+ 
+
+ <style>
+     .postcenter{
+          text-align: center;
+     }
+     img{
+       text-align: center;
+       margin-left: 30%;
+     }
+</style>
+</head>
+<body>
+ <div class="container mt-5">
+    <div class="text-center alert alert-danger">
+      <h1 style="float:left;">Home Page  </h1> 
+      <h5>Poonam</h5>
+      {% if user.is_authenticated %}
+          <h4 style="color: black; float:right;">Welcome {{user}}</h4>
+          <a class="btn btn-primary" href="{% url 'mypost' %}" role="button">My Post</a>
+          <a class="btn btn-primary" href="{% url 'post'%}" role="button">Create Post</a>
+          <a class="btn btn-primary" href="{% url 'logout' %}" role="button">Logout</a>
+          <hr style="clear:both;"/>
+      {% else %}
+          <a class="btn btn-primary" href="{% url 'login' %}" role="button">Login</a>
+          <a class="btn btn-primary" href="{% url 'register' %}" role="button">Registration</a>
+          <hr style="clear:both;"/>
+      {% endif %}
+    </div>
+    {% for i in user %}
+     <h1 class="postcenter">{{i.title}}</h1>
+     <a href="{% url 'mypostdeatils' i.id %}"><img src="{{ i.image.url }}" width="400" height="200"></a>
+     
+     <h5>Author Name :-{{i.author}}</h5>
+     <p>Description :- {{i.description}}</p>   
+     <p>{{i.created_at}}</p>
+    <form method="POST" action="/like/" id="{{i.id}}" class="like-from">
+      {% csrf_token %}
+      <input type="hidden" id="fname" name="post_id" value="{{i.id}}">
+      {% if user not in i.likes.all %}
+      <button class="fa fa-thumbs-o-up" class="btnlike{{i.id}}" type="submit">Like</button>
+      {% else %}
+      <button class="fa fa-thumbs-o-down" class="btnlike" type="submit">UnlLike</button>
+      {% endif %}
+      <h5 id="like-count">{{i.likeusers}} likes</h5>
+      <p>Liked by {{i.likeuser}}</p>
+    </form>
+     {% if user == i.author %}
+      <a class="btn btn-outline-success" href="{% url 'deleteview' i.id %}">Delete</a> 
+      <a class="btn btn-outline-success" href="{% url 'updateview' i.id %}">Edit</a>
+     {% endif %} 
+     <hr>
+    {% endfor %}
+ </div>
+ <script src="{% static 'enroll/js/jquery.js' %}"></script>
+ <script src="{% static 'enroll/js/popper.js' %}"></script>
+ <script src="{% static 'enroll/js/bootstrap.js' %}"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.like-from').click(function(event){
+    event.preventDefault()
+    const post_id = $(this).attr('id') 
+    const likes = $("id_likes").val();
+    $.ajax({
+        method:"post",
+        url: "{% url 'like-post' %}", 
+        data:{
+          'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val(),
+          'post_id':post_id,
+        },
+         success: function(response){
+          console.log('success',response)
+        },
+        error : function(response){
+          console.log('error',response)
+        }
+        
+      });
+    
+    
+  });
+});
+</script>
+</body>
+</html>

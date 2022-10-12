@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="{% static 'enroll/css/bootstrap.css' %}">
+    <style>
+        .postcenter{
+            text-align: center;
+        }
+        img{
+           text-align: center;
+           margin-left: 30%;
+        }
+        #example2 {
+          border: 1px solid;
+          padding: 10px;
+          box-shadow: 5px 10px 18px #888888;
+        }
+        #comm{
+            text-align: center;
+            color: blue;
+        }
+        #comment{
+            margin-left: 10%;
+        }
+    </style>
+    <style>
+     
+    
+
+</style>
+</head>
+<body>
+ <div class="container mt-5">
+  <h2 class="text-center alert alert-danger">Details Page</h2>
+        
+        <h1 class="postcenter">{{post.title}}</h1>
+        
+        <img src="{{ post.image.url }}" width="400" height="200">
+        <h5>Author Name :-{{post.author}}</h5>
+        <p>Description :- {{post.description}}</p>
+        <p>{{post.created_at}}</p>
+        <hr>
+         {% if user == post.author %}
+            <a class="btn btn-warning" href="{% url 'updateview' post.id %}">Update</a>
+            <a class="btn btn-warning" href="{% url 'deleteview' post.id %}">Delete</a>            
+        {% endif %}
+        <a class="btn btn-warning" href="{% url 'home' %}">Home</a>
+        <hr>
+            <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{post.id}}">
+    Comments
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal{{post.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel{{post.id}}">Comments</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{% url 'mment'%}" method="POST" class="comment-from" id="{{post.id}}">
+                            {% csrf_token %}
+                            <input type="hidden" name="postSno"  id="name"><br>
+                            Content: <br/>
+                            <textarea name="comment" id="content" cols="35" rows="8"></textarea>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary comment" id="{{post.id}}">submit</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+
+    <div id="main">
+        <h3 id="comm">Comments</h3>
+        {% if not post.comments.all %}
+            <p> No Comments</p>
+        {% else %}
+            {% for comment in post.comments.all %}
+            <div id="maincomm">
+                <strong>User:-{{comment.user}}</strong>
+                <p>{{comment.body}}</p>
+                <strong>Created time :-{{comment.created}}</strong>
+            </div>
+
+            <hr>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+        
+ </div>
+ <script src="{% static 'enroll/js/jquery.js' %}"></script>
+ <script src="{% static 'enroll/js/popper.js' %}"></script>
+ <script src="{% static 'enroll/js/bootstrap.js' %}"></script>
+ <script>
+    $(document).ready(function(){
+        $('.comment').click(function(event){
+            event.preventDefault();
+            const post_id = $(this).attr('id')
+            const constbody=$('#content').val()
+            $.ajax({
+                method:'POST',
+                url: '{% url "mment" %}', 
+                data: {
+                    'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+                    'post_id':post_id,
+                    'body':constbody,
+                    
+                },
+                success: function (data){
+                    coo='<hr><br><strong>'+"User:-"+data.users+'</strong>'+'<p >'+data.datas.body+'</p>'+'<strong>'+"Created time :-"+data.datas.created+'</strong>'
+                    $('#maincomm').append(coo);
+                    $(".comment-from").trigger("reset");
+                    $(`#exampleModal${ post_id }`).modal('hide');
+                    // $(`#exampleModal${ post_id }`).hide();
+                    // $(".modal-backdrop").hide();
+
+                },
+                error : function(data){
+                    console.log('poonam',data)
+                }
+            })
+        });
+    }); // End Documents       
+</script>
+
+</body>
+</html>

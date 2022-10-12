@@ -1,0 +1,28 @@
+<!-- {% load crispy_forms_tags %} -->
+ <!-- {{form|crispy}} -->
+
+
+
+<!-- # def get_queryset(self):
+    #     users = self.request.user
+    #     return Post.objects.filter(author=users) -->
+
+    def form_valid(self, form):
+        form.instance.user= self.request.user
+        form.instance.created_by = self.request.user
+        return super(PostView,self).form_valid(form)
+
+        
+ def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+
+        self.object.save()
+        return super(PostView,self).form_valid(form)
+
+
+form = NewNewsForm(form_data)
+    if form.is_valid():
+        news = form.save(commit=False)
+        news.author = request.user
+        news.save()
