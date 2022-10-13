@@ -63,52 +63,7 @@
      <p>Description :- {{i.description}}</p>  
      <p>{{i.created_at}}</p>
        <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{i.id}}">
-    Comments
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal{{i.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel{{i.id}}">Comments</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="{% url 'mment'%}" method="POST" class="comment-from" id="{{i.id}}">
-                {% csrf_token %}
-                <input type="hidden" name="postSno" value="{{i.id}}" id="name"><br>
-                Content: <br/>
-                <textarea name="comment" id="content" cols="35" rows="8"></textarea>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary"  class="comment-btn">submit</button>
-                </div>
-        </form>
-      </div>
-    </div>
-    </div>
-    </div><br><br>
-
-    <div id="main">
-        <h3 id="comm">Comments</h3>
-        {% if not i.comments.all %}
-            <p> No Comments</p>
-        {% else %}
-            {% for comment in i.comments.all %}
-            <div id="maincomm">
-                <span><strong>User:-{{comment.user}}</strong></span>
-                <p id="cb">{{comment.body}}</p>
-                <span><strong>Created time :-{{comment.created}}</strong></span>
-            </div>
-            <hr>
-            {% endfor %}
-        </div>
-        {% endif %}
-    </div>
-    <br><br>
+   
     <div class="col-sm-1">           
     <form method="POST" action="/like/" id="{{i.id}}" class="like-from">
       {% csrf_token %}

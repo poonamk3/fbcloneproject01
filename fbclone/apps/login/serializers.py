@@ -2,6 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth.models import User 
 from login.models import Post
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework.mixins import ListModelMixin
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -31,3 +32,10 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model= Post
         fields = ["id","title", "image","description","author"]
+
+
+class UserSerializer(serializers.ModelSerializer):
+    postuser = serializers.StringRelatedField(many=True)
+    class Meta:
+        model=User
+        fields= ['username','password','likes','postuser']

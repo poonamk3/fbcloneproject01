@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class Post(models.Model):
 	title=models.CharField(max_length=200)
 	image =models.ImageField(upload_to ='images/')
-	author =models.ForeignKey(User,on_delete= models.CASCADE,blank=True,related_name='author')
+	author =models.ForeignKey(User,on_delete= models.CASCADE,blank=True,related_name='postuser')
 	description=models.TextField()
 	updated_at=models.DateTimeField(auto_now= True)
 	created_at=models.DateTimeField(auto_now_add=True)
@@ -22,7 +22,7 @@ LIKE_CHOICES = (
     ('Unlike', 'Unlike'),
 )
 class Like(models.Model): 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,related_name='userlike')
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     value = models.CharField(choices=LIKE_CHOICES, default="Like", max_length=50)
     def __str__(self):

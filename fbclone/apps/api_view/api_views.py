@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from login.serializers import RegisterSerializer,LoginSerializer,PostSerializer
+from login.serializers import RegisterSerializer,LoginSerializer,PostSerializer,UserSerializer
 from django.contrib.auth.models import User
 from rest_framework.authentication import BasicAuthentication,SessionAuthentication
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
@@ -15,10 +15,24 @@ from django.contrib.auth import authenticate, login,logout
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from login.models import Post
+from rest_framework.mixins import ListModelMixin
+from rest_framework.generics import GenericAPIView
+from rest_framework import status
 
 class PostApi(viewsets.ModelViewSet):
+	queryset = Post.objects.all().order_by('id')
+	serializer_class = PostSerializer
+	# def list(self, request, *args, **kwargs):
+	# 	if request.user.is_authenticated:
+	# 		return super().list(request, *args, **kwargs)
+	# 	else:
+	# 		return Response(status=status.HTTP_403_FORBIDDEN)
+class Mypost(viewsets.ModelViewSet):
 	queryset = Post.objects.all()
 	serializer_class = PostSerializer
+	def get_queryset(self):
+		user=self.request.user
+		return Post.objects.filter(author=user)
 
 class registreviewapi(viewsets.ModelViewSet):
 	queryset = User.objects.all()
@@ -29,10 +43,21 @@ class registreviewapis(generics.CreateAPIView):
 	   queryset = User.objects.all()
 	   serializer_class = RegisterSerializer
 
+class UserList(ListModelMixin,GenericAPIView):
+	queryset=User.objects.all()
+	serializer_class=UserSerializer
+	def get(self,request,*args,**kwargs):
+		return self.list(request,*args,**kwargs)
+
+
 
 class LoginApi(APIView):
 	queryset = User.objects.all()
 	serializer_class = LoginSerializer
+	def get(self,request,pk=None,format=None):	
+		stu=User.objects.all()
+		serializer=LoginSerializer(stu,many=True)
+		return Response(serializer.data)
 	def post(self, request,format=None):
 		username=request.data['username']
 		password=request.data['password']
