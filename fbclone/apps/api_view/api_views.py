@@ -18,7 +18,7 @@ from login.models import Post
 from rest_framework.mixins import ListModelMixin
 from rest_framework.generics import GenericAPIView
 from rest_framework import status
-
+from login.utilis import Util
 class PostApi(viewsets.ModelViewSet):
 	queryset = Post.objects.all().order_by('id')
 	serializer_class = PostSerializer
@@ -58,14 +58,23 @@ class LoginApi(APIView):
 		stu=User.objects.all()
 		serializer=LoginSerializer(stu,many=True)
 		return Response(serializer.data)
-	def post(self, request,format=None):
+
+	def post(self,request,format=None):
 		username=request.data['username']
 		password=request.data['password']
-		user = authenticate(request,username=username, password=password)
+		email=request.data['email']
+		user = authenticate(request,email=email,username=username,password=password)
 		# user=User.objects.filter(username=username).first()
 		if user is not None:
 			login(request, user)
 			token, created = Token.objects.get_or_create(user=user)
+			# Email
+			body = 'You are Login fbclone '+"Your Token Key"+token.key
+			Util.send_email({
+        	'subject':'Fbclone Project',
+        	'body':body,
+        	'to_email':email
+        	})
 			return Response({
 				'user_info':{
 	            'token': token.key,
@@ -80,6 +89,10 @@ class LoginApi(APIView):
 			raise AuthenticationFailed("User not found")
 		if not user.check_password(password):
 			raise AuthenticationFailed("Incorrect password!")
+		
+			
+        
+		
 		
 class LogOut(APIView):
 	def get(self, request, format=None):
@@ -111,6 +124,7 @@ class UserDetails(APIView):
             'email': user.email,
             'First_Name':user.first_name,
             'is_admin':user.is_staff ,
+
         })
 		return Response({"Error"})
 

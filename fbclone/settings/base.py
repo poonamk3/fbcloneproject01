@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'bootstrap_modal_forms',
     'rest_framework',
     'rest_auth',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    # 'allauth.account',
 
 ]
 
@@ -131,6 +132,13 @@ USE_TZ = True
 
 # STATIC_URL = 'static/'
 
+# Email Configuration
+EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'poonamk@thoughtwin.com'
+EMAIL_HOST_PASSWORD = 'esuwteaaxuoakuuf'
+EMAIL_USE_TLS = True
 
 
 STATIC_URL = '/static/'
