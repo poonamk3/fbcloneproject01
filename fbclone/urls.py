@@ -20,16 +20,26 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.models import User
 from api_view.api_views import registreviewapi
-from rest_framework.routers import DefaultRouter
 from rest_framework import routers
 from rest_framework.authtoken import views
+# from django.conf.urls import url
+from rest_framework_swagger.views import get_swagger_view
+
+# Swagger
+schema_view = get_swagger_view(title='Fbclone Project API')
+# sentry
+def trigger_error(request):
+    division_by_zero = 1 / 0
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('login.urls')),
     path('api/',include('api_url.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
+    path('docs/', schema_view),
+    # path('sentry-debug/', trigger_error),
     # path('accounts/', include('allauth.urls')),
    
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
+# https://www.youtube.com/watch?v=9WFAuq_DD1E

@@ -1,0 +1,488 @@
+INFO 2022-10-17 17:31:31,844 autoreload 8450 140626854299456 Watching for file changes with StatReloader
+INFO 2022-10-17 17:31:37,251 autoreload 8473 140610092422976 Watching for file changes with StatReloader
+INFO 2022-10-17 17:34:39,341 autoreload 8473 140610092422976 /home/hp/Projects/Django/api-master/fbclone/settings/base.py changed, reloading.
+INFO 2022-10-17 17:35:11,530 autoreload 8774 139775671048000 Watching for file changes with StatReloader
+INFO 2022-10-17 17:35:13,042 autoreload 8774 139775671048000 /home/hp/Projects/Django/api-master/fbclone/settings/base.py changed, reloading.
+INFO 2022-10-17 17:35:13,522 autoreload 8812 140248411207488 Watching for file changes with StatReloader
+INFO 2022-10-17 17:35:15,011 autoreload 8812 140248411207488 /home/hp/Projects/Django/api-master/fbclone/settings/base.py changed, reloading.
+INFO 2022-10-17 17:35:15,451 autoreload 8839 139856784308032 Watching for file changes with StatReloader
+INFO 2022-10-17 17:35:16,935 autoreload 8839 139856784308032 /home/hp/Projects/Django/api-master/fbclone/settings/base.py changed, reloading.
+INFO 2022-10-17 17:35:17,387 autoreload 8862 140229251983168 Watching for file changes with StatReloader
+INFO 2022-10-17 17:35:18,888 autoreload 8862 140229251983168 /home/hp/Projects/Django/api-master/fbclone/settings/base.py changed, reloading.
+INFO 2022-10-17 17:35:19,369 autoreload 8886 140460316780352 Watching for file changes with StatReloader
+INFO 2022-10-17 17:36:12,974 autoreload 8886 140460316780352 /home/hp/Projects/Django/api-master/fbclone/settings/base.py changed, reloading.
+INFO 2022-10-17 17:36:13,454 autoreload 8928 140373607069504 Watching for file changes with StatReloader
+INFO 2022-10-17 17:36:17,232 basehttp 8928 140373510399744 "GET / HTTP/1.1" 200 8120
+INFO 2022-10-17 17:36:17,358 basehttp 8928 140373510399744 "GET /media/images/java.jpeg HTTP/1.1" 304 0
+INFO 2022-10-17 17:36:25,896 basehttp 8928 140373510399744 "GET /api/ HTTP/1.1" 200 10699
+INFO 2022-10-17 17:36:27,818 basehttp 8928 140373510399744 "GET /api/mypost/ HTTP/1.1" 200 16626
+INFO 2022-10-17 17:36:35,972 basehttp 8928 140373510399744 "POST /admin/logout/ HTTP/1.1" 200 1553
+INFO 2022-10-17 17:36:37,484 basehttp 8928 140373510399744 "GET /admin/ HTTP/1.1" 302 0
+INFO 2022-10-17 17:36:37,517 basehttp 8928 140373510399744 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2222
+INFO 2022-10-17 17:36:39,382 basehttp 8928 140373510399744 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2022-10-17 17:36:39,415 basehttp 8928 140373510399744 "GET /admin/ HTTP/1.1" 200 8844
+INFO 2022-10-17 17:37:27,049 autoreload 9118 140267818858304 Watching for file changes with StatReloader
+INFO 2022-10-17 17:37:30,801 basehttp 9118 140267650803456 "GET /admin/logout/ HTTP/1.1" 200 1553
+INFO 2022-10-17 17:37:32,357 basehttp 9118 140267650803456 "GET /admin/ HTTP/1.1" 302 0
+INFO 2022-10-17 17:37:32,391 basehttp 9118 140267650803456 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2222
+INFO 2022-10-17 17:37:37,905 basehttp 9118 140267650803456 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2389
+INFO 2022-10-17 17:37:39,356 basehttp 9118 140267650803456 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2389
+INFO 2022-10-17 17:37:40,196 basehttp 9118 140267650803456 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2389
+INFO 2022-10-17 17:37:41,147 basehttp 9118 140267650803456 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2389
+INFO 2022-10-17 17:37:46,121 basehttp 9118 140267650803456 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2389
+INFO 2022-10-17 17:37:48,603 basehttp 9118 140267650803456 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2389
+INFO 2022-10-17 17:38:05,651 basehttp 9118 140267650803456 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2022-10-17 17:38:05,684 basehttp 9118 140267650803456 "GET /admin/ HTTP/1.1" 200 6384
+INFO 2022-10-17 17:38:14,997 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 200 14821
+INFO 2022-10-17 17:38:28,880 basehttp 9118 140267650803456 "GET /api/auth/logout/?next=/api/mypost/ HTTP/1.1" 302 0
+ERROR 2022-10-17 17:38:28,974 log 9118 140267650803456 Internal Server Error: /api/mypost/
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/sentry_sdk/integrations/django/views.py", line 67, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/home/hp/Projects/Django/api-master/fbclone/apps/api_view/api_views.py", line 35, in get_queryset
+    return Post.objects.filter(author=user)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x7f92a025c880>.
+ERROR 2022-10-17 17:38:28,980 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 500 163465
+ERROR 2022-10-17 17:38:34,621 log 9118 140267650803456 Internal Server Error: /api/mypost/
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/sentry_sdk/integrations/django/views.py", line 67, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/home/hp/Projects/Django/api-master/fbclone/apps/api_view/api_views.py", line 35, in get_queryset
+    return Post.objects.filter(author=user)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x7f92a025c910>.
+ERROR 2022-10-17 17:38:34,624 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 500 163440
+INFO 2022-10-17 17:41:55,360 basehttp 9118 140267650803456 "GET /docs/ HTTP/1.1" 200 11223
+INFO 2022-10-17 17:41:55,379 basehttp 9118 140267616597760 "GET /static/rest_framework_swagger/bundles/vendors.bundle.css HTTP/1.1" 304 0
+INFO 2022-10-17 17:41:55,379 basehttp 9118 140267650803456 "GET /static/rest_framework_swagger/bundles/vendors.bundle.js HTTP/1.1" 304 0
+INFO 2022-10-17 17:41:55,384 basehttp 9118 140267642410752 "GET /static/rest_framework_swagger/bundles/app.bundle.css HTTP/1.1" 304 0
+INFO 2022-10-17 17:41:55,387 basehttp 9118 140267607942912 "GET /static/rest_framework_swagger/bundles/app.bundle.js HTTP/1.1" 304 0
+INFO 2022-10-17 17:41:55,388 basehttp 9118 140267122325248 "GET /static/rest_framework_swagger/logo_small.png HTTP/1.1" 304 0
+INFO 2022-10-17 17:42:25,851 basehttp 9118 140267650803456 "GET /docs/ HTTP/1.1" 200 11223
+INFO 2022-10-17 17:42:25,885 basehttp 9118 140267650803456 "GET /static/rest_framework_swagger/bundles/vendors.bundle.js HTTP/1.1" 200 1636116
+INFO 2022-10-17 17:42:30,909 basehttp 9118 140267650803456 "GET /accounts/login/?next=/docs/ HTTP/1.1" 200 1209
+INFO 2022-10-17 17:42:32,573 basehttp 9118 140267650803456 "POST /accounts/login/?next=/docs/ HTTP/1.1" 302 0
+INFO 2022-10-17 17:42:32,606 basehttp 9118 140267650803456 "GET /docs/ HTTP/1.1" 200 11219
+INFO 2022-10-17 17:43:17,896 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 200 14821
+INFO 2022-10-17 17:43:20,680 basehttp 9118 140267650803456 "GET /api/auth/logout/?next=/api/mypost/ HTTP/1.1" 302 0
+ERROR 2022-10-17 17:43:20,751 log 9118 140267650803456 Internal Server Error: /api/mypost/
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/sentry_sdk/integrations/django/views.py", line 67, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/home/hp/Projects/Django/api-master/fbclone/apps/api_view/api_views.py", line 35, in get_queryset
+    return Post.objects.filter(author=user)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x7f92a00d6760>.
+ERROR 2022-10-17 17:43:20,754 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 500 163465
+ERROR 2022-10-17 17:43:43,239 log 9118 140267650803456 Internal Server Error: /api/mypost/
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/sentry_sdk/integrations/django/views.py", line 67, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/home/hp/Projects/Django/api-master/fbclone/apps/api_view/api_views.py", line 35, in get_queryset
+    return Post.objects.filter(author=user)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x7f92a00f87c0>.
+ERROR 2022-10-17 17:43:43,242 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 500 163440
+INFO 2022-10-17 17:43:47,381 basehttp 9118 140267650803456 "GET /api/ HTTP/1.1" 200 10470
+INFO 2022-10-17 17:43:48,788 basehttp 9118 140267650803456 "GET /api/auth/login/?next=/api/ HTTP/1.1" 200 2705
+INFO 2022-10-17 17:43:49,902 basehttp 9118 140267650803456 "POST /api/auth/login/ HTTP/1.1" 302 0
+INFO 2022-10-17 17:43:49,924 basehttp 9118 140267650803456 "GET /api/ HTTP/1.1" 200 10700
+INFO 2022-10-17 17:48:37,402 basehttp 9118 140267650803456 "GET /api/auth/logout/?next=/api/ HTTP/1.1" 302 0
+INFO 2022-10-17 17:48:37,413 basehttp 9118 140267650803456 "GET /api/ HTTP/1.1" 200 10470
+INFO 2022-10-17 17:48:38,341 basehttp 9118 140267650803456 "GET /api/auth/login/?next=/api/ HTTP/1.1" 200 2705
+INFO 2022-10-17 17:48:39,636 basehttp 9118 140267650803456 "POST /api/auth/login/ HTTP/1.1" 302 0
+INFO 2022-10-17 17:48:39,656 basehttp 9118 140267650803456 "GET /api/ HTTP/1.1" 200 10700
+INFO 2022-10-17 17:48:45,200 basehttp 9118 140267650803456 "GET /api/auth/logout/?next=/api/ HTTP/1.1" 302 0
+INFO 2022-10-17 17:48:45,217 basehttp 9118 140267650803456 "GET /api/ HTTP/1.1" 200 10470
+INFO 2022-10-17 17:48:45,931 basehttp 9118 140267650803456 "GET /api/auth/login/?next=/api/ HTTP/1.1" 200 2705
+INFO 2022-10-17 17:48:48,299 basehttp 9118 140267650803456 "POST /api/auth/login/ HTTP/1.1" 302 0
+INFO 2022-10-17 17:48:48,320 basehttp 9118 140267650803456 "GET /api/ HTTP/1.1" 200 10700
+INFO 2022-10-17 17:48:49,766 basehttp 9118 140267650803456 "GET /api/post/ HTTP/1.1" 200 16706
+INFO 2022-10-17 17:48:55,378 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 200 14821
+INFO 2022-10-17 17:49:39,636 basehttp 9118 140267650803456 "POST /api/mypost/ HTTP/1.1" 201 15776
+INFO 2022-10-17 17:49:44,123 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 200 15446
+INFO 2022-10-17 17:49:48,016 basehttp 9118 140267650803456 "GET /api/ HTTP/1.1" 200 10700
+INFO 2022-10-17 17:49:50,272 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 200 15446
+INFO 2022-10-17 17:49:57,071 basehttp 9118 140267650803456 "GET /api/auth/logout/?next=/api/mypost/ HTTP/1.1" 302 0
+ERROR 2022-10-17 17:49:57,154 log 9118 140267650803456 Internal Server Error: /api/mypost/
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/sentry_sdk/integrations/django/views.py", line 67, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/home/hp/Projects/Django/api-master/fbclone/apps/api_view/api_views.py", line 35, in get_queryset
+    return Post.objects.filter(author=user)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x7f9298560a90>.
+ERROR 2022-10-17 17:49:57,157 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 500 163553
+ERROR 2022-10-17 17:49:59,279 log 9118 140267650803456 Internal Server Error: /api/mypost/
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/sentry_sdk/integrations/django/views.py", line 67, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/home/hp/Projects/Django/api-master/fbclone/apps/api_view/api_views.py", line 35, in get_queryset
+    return Post.objects.filter(author=user)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x7f9298560d30>.
+ERROR 2022-10-17 17:49:59,282 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 500 163528
+ERROR 2022-10-17 17:50:01,209 log 9118 140267650803456 Internal Server Error: /api/mypost/
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2018, in get_prep_value
+    return int(value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/sentry_sdk/integrations/django/views.py", line 67, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/rest_framework/mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "/home/hp/Projects/Django/api-master/fbclone/apps/api_view/api_views.py", line 35, in get_queryset
+    return Post.objects.filter(author=user)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1478, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1303, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/hp/.env/apienv/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x7f92a0182c70>.
+ERROR 2022-10-17 17:50:01,213 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 500 163528
+INFO 2022-10-17 17:50:06,089 basehttp 9118 140267650803456 "GET /api/ HTTP/1.1" 200 10470
+INFO 2022-10-17 17:50:07,315 basehttp 9118 140267650803456 "GET /api/auth/login/?next=/api/ HTTP/1.1" 200 2705
+INFO 2022-10-17 17:50:13,919 basehttp 9118 140267650803456 "POST /api/auth/login/ HTTP/1.1" 200 2943
+INFO 2022-10-17 17:50:21,625 basehttp 9118 140267650803456 "POST /api/auth/login/ HTTP/1.1" 302 0
+INFO 2022-10-17 17:50:21,646 basehttp 9118 140267650803456 "GET /api/ HTTP/1.1" 200 10699
+INFO 2022-10-17 17:50:25,306 basehttp 9118 140267650803456 "GET /api/mypost/ HTTP/1.1" 200 16705
+INFO 2022-10-17 17:52:55,183 basehttp 9118 140267650803456 "GET /admin/ HTTP/1.1" 200 8844
+INFO 2022-10-17 17:52:55,392 basehttp 9118 140267650803456 "GET /admin/ HTTP/1.1" 200 8844
+INFO 2022-10-17 17:52:57,733 basehttp 9118 140267650803456 "GET /admin/drf_api_logger/apilogsmodel/ HTTP/1.1" 200 17135
+INFO 2022-10-17 17:52:57,763 basehttp 9118 140267650803456 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2022-10-17 17:53:10,107 basehttp 9118 140267650803456 "GET /admin/drf_api_logger/apilogsmodel/?added_on__gte=2022-10-17+00%3A00%3A00%2B05%3A30&added_on__lt=2022-10-18+00%3A00%3A00%2B05%3A30 HTTP/1.1" 200 19901
+INFO 2022-10-17 17:53:10,140 basehttp 9118 140267650803456 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2022-10-17 17:53:11,875 basehttp 9118 140267650803456 "GET /admin/drf_api_logger/apilogsmodel/? HTTP/1.1" 200 17135
+INFO 2022-10-17 17:53:11,904 basehttp 9118 140267650803456 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2022-10-17 18:07:54,593 autoreload 10821 140240952080192 Watching for file changes with StatReloader
+INFO 2022-10-17 18:10:31,770 basehttp 10821 140240788272896 "GET / HTTP/1.1" 200 9218
+INFO 2022-10-17 18:10:31,897 basehttp 10821 140240788272896 "GET /media/images/python.jpeg HTTP/1.1" 200 56706
+INFO 2022-10-17 18:10:31,900 basehttp 10821 140240779880192 "GET /media/images/java.jpeg HTTP/1.1" 304 0

@@ -13,14 +13,14 @@ router.register('mypost',Mypost,basename='myapi'),
 
 
 urlpatterns = [
-    path('registerapi/', registreviewapis.as_view(), name='resapi'),
-    path('userlist/', UserList.as_view(), name='userlist'),
-    path('loginapi/', LoginApi.as_view(), name='loginapi'),
-    path('userinfo/', UserDetails.as_view(), name='user-info'),
-    path('logoutapi/', LogOut.as_view(), name='loginapi'),
+    path('registerapi/',registreviewapis.as_view(), name='resapi'),
+    path('userlist/',UserList.as_view(), name='userlist'),
+    path('loginapi/',LoginApi.as_view(), name='loginapi'),
+    path('userinfo/',UserDetails.as_view(), name='user-info'),
+    path('logoutapi/',LogOut.as_view(), name='loginapi'),
     path('',include(router.urls)),
     path('auth/',include('rest_framework.urls',namespace='rest_framework')),
     # path('login/',views.obtain_auth_token,name='api-token-auth'),
-    path('login-auth/', CustomAuthToken.as_view()),
+    path('login-auth/',CustomAuthToken.as_view()),
 
 ]

@@ -15,6 +15,25 @@ import sys
 # import config
 from pathlib import Path
 import os
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+
+sentry_sdk.init(
+    dsn="https://c65f2322a96144a3be01a259cfca2ce3@o4503997108912128.ingest.sentry.io/4503997202235392",
+    integrations=[
+        DjangoIntegration(),
+    ],
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0,
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -46,6 +65,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_auth',
     'rest_framework.authtoken',
+    'rest_framework_swagger',
+    'drf_api_logger'
+    # 'drf_yasg'
     # 'allauth.account',
 
 ]
@@ -58,6 +80,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     'drf_api_logger.middleware.api_logger_middleware.APILoggerMiddleware',
 ]
 
 ROOT_URLCONF = 'fbclone.urls'
@@ -76,6 +99,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries' : {
+                'staticfiles': 'django.templatetags.static', 
+            }
         },
     },
 ]
@@ -154,6 +180,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         # 'rest_framework.authentication.SessionAuthentication',
@@ -163,7 +190,9 @@ REST_FRAMEWORK = {
     #     'rest_framework.permissions.IsAuthenticatedOrReadOnly'
     # ],
 }
-
+REST_FRAMEWORK = {
+  'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -191,3 +220,45 @@ REST_FRAMEWORK = {
 #         'rest_framework.authentication.SessionAuthentication',
 #     )
 # }
+
+# Logger
+DRF_API_LOGGER_DATABASE = True 
+DRF_API_LOGGER_SIGNAL = True  # Default to False
+
+
+
+
+
+import os
+
+LOGGING ={
+    'version':1,
+    'loggers':{
+        'django':{
+            'handlers':['file','file2'],
+            'level':'DEBUG'
+        }
+    },
+    'handlers':{
+        'file':{
+            'level':'INFO',
+            'class': 'logging.FileHandler',
+            'filename':'fbclone/logs/debug5.log',
+            'formatter':'simpleRe',
+        },
+        'file2':{
+            'level':'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename':'fbclone/logs/debug6.log',
+            'formatter':'simpleRe',
+        }
+    },
+    'formatters':{
+        'simpleRe': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        }
+
+    }
+}
+
