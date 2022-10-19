@@ -66,10 +66,21 @@ INSTALLED_APPS = [
     'rest_auth',
     'rest_framework.authtoken',
     'rest_framework_swagger',
-    'drf_api_logger'
+    'drf_api_logger',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'crispy_forms',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook'
     # 'drf_yasg'
     # 'allauth.account',
 
+]
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend', 
 ]
 
 MIDDLEWARE = [
@@ -98,6 +109,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
             'libraries' : {
                 'staticfiles': 'django.templatetags.static', 
@@ -105,6 +117,20 @@ TEMPLATES = [
         },
     },
 ]
+
+SITE_ID = 1
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '123',
+            'secret': '456',
+            'key': ''
+        }
+    }
+}
 
 
 WSGI_APPLICATION = 'fbclone.wsgi.application'
@@ -152,6 +178,7 @@ USE_I18N = True
 
 USE_TZ = True
 # LOGIN_REDIRECT_URL = '/admin'
+# LOGIN_REDIRECT_URL = 'home'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -176,11 +203,13 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
+# Google django-crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+ACCOUNT_SESSION_REMEMBER = True
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         # 'rest_framework.authentication.SessionAuthentication',
@@ -228,9 +257,8 @@ DRF_API_LOGGER_SIGNAL = True  # Default to False
 
 
 
-
+"""
 import os
-
 LOGGING ={
     'version':1,
     'loggers':{
@@ -262,3 +290,57 @@ LOGGING ={
     }
 }
 
+"""
+
+"""
+Your Client ID
+888954806080-1b984m7kmbmhf79cn4vhmbav7tu7hgq4.apps.googleusercontent.com
+
+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"""
+
+
+SOCIALACCOUNT_PROVIDERS = {
+   'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'middle_name',
+            'name',
+            'name_format',
+            'picture',
+            'short_name'
+        ],
+        'EXCHANGE_TOKEN': True,
+        # 'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v13.0',
+        'LOCALE_FUNC': lambda request: 'en_US'
+    },
+    'github': {
+        'SCOPE': [
+            'user',
+            'repo',
+            'read:org',
+        ],
+    },
+}
+
+
+# 785548549188252 Appid
+
+# d2fe7eabb3b8862e83102af559f70e71 appsecret

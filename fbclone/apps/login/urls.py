@@ -19,4 +19,5 @@ urlpatterns = [
     path('comment/',views.add_comment,name="mment"),
     
     
+    
 ]

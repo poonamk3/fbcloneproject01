@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% load account %}
+{% user_display user %}
+
 <html lang="en">
 <head>
  <meta charset="UTF-8">
@@ -14,8 +19,16 @@
            {{form.as_p}}
         <input type="submit" class="btn btn-warning" value="submit">
         <a class="btn btn-warning" href="/">Home</a>
-
       </form>
+ </div>
+ <div>     
+     {% if user.is_authenticated %}
+     <p>Welcome, {{ user.username }} !</p>
+     {% else %}
+     <a href="{% provider_login_url 'google' %}">Login with Google</a>
+     <a href='{% provider_login_url "facebook" method="js_sdk" %}'>Facebook Connect</a>
+     <a href='http://127.0.0.1:8000/accounts/github/login/callback/'>Git Hub</a>
+     {% endif %}
  </div>
  <script src="{% static 'enroll/js/jquery.js' %}"></script>
  <script src="{% static 'enroll/js/popper.js' %}"></script>

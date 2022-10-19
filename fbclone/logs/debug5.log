@@ -486,3 +486,29 @@ INFO 2022-10-17 18:07:54,593 autoreload 10821 140240952080192 Watching for file 
 INFO 2022-10-17 18:10:31,770 basehttp 10821 140240788272896 "GET / HTTP/1.1" 200 9218
 INFO 2022-10-17 18:10:31,897 basehttp 10821 140240788272896 "GET /media/images/python.jpeg HTTP/1.1" 200 56706
 INFO 2022-10-17 18:10:31,900 basehttp 10821 140240779880192 "GET /media/images/java.jpeg HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:32,202 autoreload 10538 140394561468224 Watching for file changes with StatReloader
+INFO 2022-10-19 10:05:37,792 basehttp 10538 140394464798464 "GET / HTTP/1.1" 200 9218
+INFO 2022-10-19 10:05:37,845 basehttp 10538 140394464798464 "GET /static/enroll/css/bootstrap.css HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:37,891 basehttp 10538 140394464798464 "GET /static/enroll/js/jquery.min.js HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:37,951 basehttp 10538 140394456405760 "GET /media/images/java.jpeg HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:37,955 basehttp 10538 140394464798464 "GET /media/images/python.jpeg HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:37,963 basehttp 10538 140394092295936 "GET /media/images/comments-python.jpg HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:37,966 basehttp 10538 140394083903232 "GET /media/images/java-logo-vert-blk.png HTTP/1.1" 304 0
+WARNING 2022-10-19 10:05:38,055 log 10538 140394464798464 Not Found: /favicon.ico
+WARNING 2022-10-19 10:05:38,067 basehttp 10538 140394464798464 "GET /favicon.ico HTTP/1.1" 404 4808
+INFO 2022-10-19 10:05:46,523 basehttp 10538 140394464798464 "GET /api/ HTTP/1.1" 200 10699
+INFO 2022-10-19 10:05:46,549 basehttp 10538 140394067117824 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:46,554 basehttp 10538 140394456405760 "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:46,557 basehttp 10538 140394092295936 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:46,563 basehttp 10538 140394075510528 "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:46,563 basehttp 10538 140394464798464 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:46,564 basehttp 10538 140394083903232 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:46,566 basehttp 10538 140394067117824 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:46,567 basehttp 10538 140394456405760 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:46,569 basehttp 10538 140394092295936 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:46,572 basehttp 10538 140394075510528 "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:46,609 basehttp 10538 140394067117824 "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+INFO 2022-10-19 10:05:50,003 basehttp 10538 140394067117824 "GET /api/post/ HTTP/1.1" 200 17330
+INFO 2022-10-19 10:05:53,494 basehttp 10538 140394067117824 "GET /api/mypost/ HTTP/1.1" 200 16705
+INFO 2022-10-19 10:06:00,733 basehttp 10538 140394067117824 "GET /api/post/ HTTP/1.1" 200 17330
+INFO 2022-10-19 10:29:06,428 autoreload 10538 140394561468224 /home/hp/Projects/Django/api-master/fbclone/settings/base.py changed, reloading.

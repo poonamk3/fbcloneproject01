@@ -35,11 +35,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('login.urls')),
     path('api/',include('api_url.urls')),
-    path('accounts/',include('django.contrib.auth.urls')),
-    path('docs/', schema_view),
+    path('accountss/',include('django.contrib.auth.urls')),
+    path('docs/', schema_view),   #Swagger link
+    path('accounts/', include('allauth.urls')),
     # path('sentry-debug/', trigger_error),
-    # path('accounts/', include('allauth.urls')),
-   
+
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 # https://www.youtube.com/watch?v=9WFAuq_DD1E
