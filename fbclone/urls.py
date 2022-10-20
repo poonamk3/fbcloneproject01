@@ -35,7 +35,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('login.urls')),
     path('api/',include('api_url.urls')),
-    path('accountss/',include('django.contrib.auth.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
     path('docs/', schema_view),   #Swagger link
     path('accounts/', include('allauth.urls')),
     # path('sentry-debug/', trigger_error),

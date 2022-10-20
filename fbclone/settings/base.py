@@ -91,7 +91,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-     'drf_api_logger.middleware.api_logger_middleware.APILoggerMiddleware',
+    'drf_api_logger.middleware.api_logger_middleware.APILoggerMiddleware',
 ]
 
 ROOT_URLCONF = 'fbclone.urls'
@@ -119,18 +119,6 @@ TEMPLATES = [
 ]
 
 SITE_ID = 1
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
-        }
-    }
-}
 
 
 WSGI_APPLICATION = 'fbclone.wsgi.application'
@@ -178,7 +166,7 @@ USE_I18N = True
 
 USE_TZ = True
 # LOGIN_REDIRECT_URL = '/admin'
-# LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -210,6 +198,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ACCOUNT_SESSION_REMEMBER = True
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         # 'rest_framework.authentication.SessionAuthentication',
@@ -298,6 +287,18 @@ Your Client ID
 
 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"""
 
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '123',
+            'secret': '456',
+            'key': ''
+        }
+    }
+}
 
 SOCIALACCOUNT_PROVIDERS = {
    'google': {
@@ -311,7 +312,7 @@ SOCIALACCOUNT_PROVIDERS = {
     },
     'facebook': {
         'METHOD': 'oauth2',
-        'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+        # 'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
         'SCOPE': ['email', 'public_profile'],
         'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
         'INIT_PARAMS': {'cookie': True},
@@ -323,13 +324,12 @@ SOCIALACCOUNT_PROVIDERS = {
             'name',
             'name_format',
             'picture',
-            'short_name'
+            'short_name',
         ],
         'EXCHANGE_TOKEN': True,
         # 'LOCALE_FUNC': 'path.to.callable',
         'VERIFIED_EMAIL': False,
-        'VERSION': 'v13.0',
-        'LOCALE_FUNC': lambda request: 'en_US'
+        
     },
     'github': {
         'SCOPE': [
