@@ -42,4 +42,5 @@ urlpatterns = [
 
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
+
 # https://www.youtube.com/watch?v=9WFAuq_DD1E
