@@ -50,7 +50,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 # ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = ['*']
-# DEBUG = False
+DEBUG = False
 ALLOWED_HOSTS = ['fbcloneproject.herokuapp.com', 'localhost']
 
 
@@ -96,6 +96,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'drf_api_logger.middleware.api_logger_middleware.APILoggerMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'fbclone.urls'
