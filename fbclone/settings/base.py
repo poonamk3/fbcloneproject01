@@ -95,9 +95,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'drf_api_logger.middleware.api_logger_middleware.APILoggerMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     
 ]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 ROOT_URLCONF = 'fbclone.urls'
 # TEMPLATE_DIRS =(os.path.join(BASE_DIR, 'templates'),)
