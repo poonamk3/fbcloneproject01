@@ -253,7 +253,7 @@ DRF_API_LOGGER_DATABASE = True
 DRF_API_LOGGER_SIGNAL = True  # Default to False
 
 
-heroku config:set DISABLE_COLLECTSTATIC=1
+
 
 
 """
