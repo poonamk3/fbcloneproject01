@@ -51,7 +51,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = ['*']
 DEBUG = False
-ALLOWED_HOSTS = ['fbcloneproject.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['fbcloneproject.herokuapp.com','localhost']
 
 
 # Application definition
@@ -101,10 +101,8 @@ MIDDLEWARE = [
 ]
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
