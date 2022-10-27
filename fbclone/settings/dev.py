@@ -10,3 +10,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+
+heroku config:set DISABLE_COLLECTSTATIC=1
