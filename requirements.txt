@@ -1,6 +1,5 @@
 asgiref==3.5.2
 attrs==22.1.0
-backports.zoneinfo==0.2.1
 bleach==5.0.1
 certifi==2022.9.24
 cffi==1.15.1
@@ -36,7 +35,6 @@ openapi-codec==1.3.2
 package-coffee==0.0.0
 packaging==21.3
 Pillow==9.2.0
-
 pluggy==1.0.0
 postgres==4.0
 psutil==5.8.0
