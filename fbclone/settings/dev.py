@@ -1,13 +1,13 @@
 from .base import *
-DATABASES = {
+# DATABASES = {
 
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'newfb',
-        'USER': 'postgres',
-        'PASSWORD': 'psql',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'newfb',
+#         'USER': 'postgres',
+#         'PASSWORD': 'psql',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
