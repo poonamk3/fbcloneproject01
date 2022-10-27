@@ -99,8 +99,15 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
     
 ]
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 ROOT_URLCONF = 'fbclone.urls'
 # TEMPLATE_DIRS =(os.path.join(BASE_DIR, 'templates'),)
@@ -188,7 +195,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'poonamk@thoughtwin.com'
 EMAIL_HOST_PASSWORD = 'esuwteaaxuoakuuf'
 EMAIL_USE_TLS = True
-
+"""
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "static"
 # STATIC_URL = '/static/'
@@ -197,6 +204,7 @@ STATIC_ROOT = BASE_DIR / "static"
 STATICFILES_DIRS = (
 os.path.join(BASE_DIR, "static"),
 )
+"""
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
