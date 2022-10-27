@@ -62,6 +62,5 @@ webencodings==0.5.1
 whitenoise==6.2.0
 zipp==3.9.0
 pip==8.1.2
-pkg-resources==0.0.0
 setuptools==25.2.0
 wheel==0.29.0
