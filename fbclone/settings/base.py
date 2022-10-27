@@ -179,7 +179,7 @@ LOGIN_REDIRECT_URL = '/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-# STATIC_URL = 'static/'
+
 
 # Email Configuration
 EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
@@ -189,6 +189,7 @@ EMAIL_HOST_USER = 'poonamk@thoughtwin.com'
 EMAIL_HOST_PASSWORD = 'esuwteaaxuoakuuf'
 EMAIL_USE_TLS = True
 
+STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "static"
 # STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, '/')
