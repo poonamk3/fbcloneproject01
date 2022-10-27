@@ -19,9 +19,8 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.models import User
-from api_view.api_views import registreviewapi
 from rest_framework import routers
-from rest_framework.authtoken import views
+# from rest_framework.authtoken import views
 # from django.conf.urls import url
 from rest_framework_swagger.views import get_swagger_view
 
